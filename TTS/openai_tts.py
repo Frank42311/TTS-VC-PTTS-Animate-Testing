@@ -2,7 +2,7 @@ import os
 import time
 import openai
 
-from text import news_en, news_fr, story_en, story_fr
+from text import news_en, news_fr, news_ch, story_en, story_fr, story_ch
 
 def load_openai_key():
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -14,59 +14,68 @@ def load_openai_key():
             key = f.read().strip()
         return key
     except FileNotFoundError:
-        raise FileNotFoundError(f"无法找到配置文件：{key_path}")
+        raise FileNotFoundError(f"Configuration file not found: {key_path}")
 
+# Load OpenAI API key
 openai.api_key = load_openai_key()
 
+# Ensure output directory exists
 project_root = os.path.dirname(os.path.abspath(__file__))
 output_dir = os.path.join(project_root, "output")
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
+# Texts to be converted to speech
 texts = {
     "news_en": news_en,
     "news_fr": news_fr,
+    "news_ch": news_ch,
     "story_en": story_en,
     "story_fr": story_fr,
+    "story_ch": story_ch,
 }
 
+# Models to be used
 models = {
     "tts": "tts-1",
     "ttshd": "tts-1-hd",
 }
 
+# Voice mapping based on content type
 voice_map = {
     "news": "alloy",
     "story": "fable"
 }
 
+# Generate speech for each text and model combination
 for text_key, text_value in texts.items():
     voice = voice_map["news"] if "news" in text_key else voice_map.get("story", "alloy")
 
     for model_key, model_name in models.items():
-        print(f"开始生成 {text_key} 使用模型 {model_name}（声音：{voice}）的语音...")
+        print(f"Generating speech for {text_key} using model {model_name} (voice: {voice})...")
         try:
             start_time = time.time()
 
-            # 使用新版 API
+            # Generate speech using OpenAI API
             response = openai.audio.speech.create(
                 model=model_name,
                 input=text_value,
                 voice=voice
             )
 
-            elapsed = round(time.time() - start_time)  # 四舍五入到秒
-            print(f"生成 {text_key} 的语音耗时：{elapsed} 秒")
+            elapsed = round(time.time() - start_time)  # Round elapsed time to seconds
+            print(f"Speech generation for {text_key} took: {elapsed} seconds")
 
-            # 计算 token 数量
-            token_count = len(text_value.split())  # 简单按空格分词计数，可替换为更精确的 token 计算方法
+            # Count tokens (simple word count, can be replaced with more accurate tokenization)
+            token_count = len(text_value.split())
 
+            # Save the generated audio file
             filename = f"openai_{model_key}_{text_key}_{elapsed}s_{token_count}tokens.mp3"
             filepath = os.path.join(output_dir, filename)
 
             with open(filepath, "wb") as audio_file:
                 audio_file.write(response.content)
-            print(f"已保存文件：{filepath}\n")
+            print(f"File saved: {filepath}\n")
 
         except Exception as e:
-            print(f"生成 {text_key} 语音时出错（模型：{model_name}，声音：{voice}）：{e}\n")
+            print(f"Error generating speech for {text_key} (model: {model_name}, voice: {voice}): {e}\n")
