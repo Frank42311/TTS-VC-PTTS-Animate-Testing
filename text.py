@@ -14,6 +14,14 @@ La conférence présentait également des expositions interactives démontrant c
 Les organisateurs ont affirmé que le succès de l’événement souligne l’engagement mondial à exploiter la technologie pour le bien commun. Avec de nouvelles recherches et une collaboration internationale à l’horizon, les experts anticipent une ère de transformation qui non seulement améliorera la vie quotidienne, mais relèvera également certains des défis les plus urgents du monde. L’événement s’est conclu sur une note d’espoir.
 """
 
+news_ch = """
+在日内瓦举行的年度全球科技大会上，专家们展示了人工智能技术的突破性进展，承诺将重塑各个行业。此次活动吸引了来自世界各地的科技领袖、投资者和研究人员。大会主旨演讲人之一的艾米丽·汤普森博士表示，最新的人工智能系统能够比以往模型更快、更高效地处理数据，标志着计算能力的重大飞跃。“这一突破将为医疗保健、金融和环境管理领域带来更智能的解决方案，”汤普森博士说道。
+
+大会还设有互动展览，展示了人工智能如何在自动驾驶汽车和可持续能源等领域引领变革。业内分析人士认为，这些创新将带来更高的生产力和新的经济机遇。投资者对人工智能初创企业的快速增长潜力表示乐观。此次活动为建立联系和促进合作提供了平台，鼓励跨行业伙伴关系，推动技术进步。
+
+组织者表示，活动的成功凸显了全球致力于利用技术造福社会的承诺。随着进一步的研究和国际合作的推进，专家们预计将迎来一个变革时代，不仅能改善人们的日常生活，还能应对世界上一些最紧迫的挑战。大会在充满希望的氛围中圆满结束。
+"""
+
 story_en = """
 In the mystical forest of Everdawn, a curious boy named Leo discovered a shimmering, hidden portal behind an ancient willow tree. The portal pulsed with vibrant colors, inviting him to step into an unknown realm. With a mix of excitement and trepidation, Leo took a deep breath and leaped through the glowing gateway.
 
@@ -32,14 +40,6 @@ Dans le monde magique au-delà, il rencontra des animaux parlants, des fées lum
 Ensemble, ils parcoururent des rivières étincelantes, des grottes mystérieuses et des prés baignés de soleil, résolvant des énigmes et surmontant des obstacles fantaisistes. Chaque pas dévoilait des merveilles dépassant ses rêves les plus fous. À chaque défi, Léo gagnait en confiance et apprenait l’importance de l’amitié et de la persévérance. Au moment de retourner à Everdawn, la magie du monde caché s’était ravivée dans son cœur, promettant des aventures sans fin dans les deux royaumes.
 
 Avant de rentrer chez lui, Léo fit une promesse sincère au royaume magique, jurant de chérir ses secrets et de partager ses merveilles avec tous ceux qu’il rencontrait.
-"""
-
-news_ch = """
-在日内瓦举行的年度全球科技大会上，专家们展示了人工智能技术的突破性进展，承诺将重塑各个行业。此次活动吸引了来自世界各地的科技领袖、投资者和研究人员。大会主旨演讲人之一的艾米丽·汤普森博士表示，最新的人工智能系统能够比以往模型更快、更高效地处理数据，标志着计算能力的重大飞跃。“这一突破将为医疗保健、金融和环境管理领域带来更智能的解决方案，”汤普森博士说道。
-
-大会还设有互动展览，展示了人工智能如何在自动驾驶汽车和可持续能源等领域引领变革。业内分析人士认为，这些创新将带来更高的生产力和新的经济机遇。投资者对人工智能初创企业的快速增长潜力表示乐观。此次活动为建立联系和促进合作提供了平台，鼓励跨行业伙伴关系，推动技术进步。
-
-组织者表示，活动的成功凸显了全球致力于利用技术造福社会的承诺。随着进一步的研究和国际合作的推进，专家们预计将迎来一个变革时代，不仅能改善人们的日常生活，还能应对世界上一些最紧迫的挑战。大会在充满希望的氛围中圆满结束。
 """
 
 story_ch = """

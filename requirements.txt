@@ -1,3 +1,10 @@
 openai
 transformers
 huggingface_hub
+modelscope
+torch
+addict
+datasets
+soundfile
+numpy
+Pillow

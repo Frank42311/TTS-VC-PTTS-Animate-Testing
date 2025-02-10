@@ -1,0 +1,3 @@
+docker build -t tts-vc-ptts-animate-testing .
+
+docker run --gpus all -it tts-vc-ptts-animate-testing
